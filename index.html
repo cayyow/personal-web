@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mochammad Nur Cahyono | Healthcare & Tech</title>
-    <!-- Google Fonts: Poppins untuk kesan modern -->
+    <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -15,6 +15,7 @@
             --primary: #38bdf8;
             --primary-glow: rgba(56, 189, 248, 0.4);
             --secondary: #818cf8;
+            --accent: #34d399;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.1);
@@ -100,6 +101,54 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
+        /* Impact Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .metric-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .metric-card:hover {
+            border-color: var(--primary);
+        }
+
+        .metric-card i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         /* Section Titles */
         .section-title {
             font-size: 1.5rem;
@@ -135,7 +184,7 @@
             color: var(--bg-main);
         }
 
-        /* Sleek Timeline for Experience */
+        /* Sleek Timeline */
         .timeline {
             border-left: 2px solid var(--border);
             margin-left: 1rem;
@@ -167,28 +216,10 @@
             box-shadow: 0 0 10px var(--primary-glow);
         }
 
-        .exp-role {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .exp-company {
-            color: var(--primary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .exp-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .exp-details {
-            list-style: none;
-        }
+        .exp-role { font-size: 1.2rem; font-weight: 600; color: var(--text-main); }
+        .exp-company { color: var(--primary); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.25rem; }
+        .exp-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .exp-details { list-style: none; }
 
         .exp-details li {
             position: relative;
@@ -216,6 +247,7 @@
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
         }
 
         footer {
@@ -240,12 +272,36 @@
             </div>
         </div>
 
-        <!-- SUMMARY -->
+        <!-- SUMMARY & METRICS SECTION -->
         <div class="card">
-            <h3 class="section-title"><i class="fa-solid fa-bolt"></i> Professional Summary</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; text-align: justify;">
-                Profesional di bidang pelayanan kesehatan dengan latar belakang Profesi Ners dan pengalaman dalam pengelolaan operasional klinik skala besar berbasis BPJS[cite: 1]. Memiliki keahlian dalam manajemen alur pelayanan, pengembangan sistem operasional, implementasi SOP, serta transformasi Rekam Medis Elektronik (RME)[cite: 1]. Berpengalaman dalam pengelolaan layanan dengan volume tinggi, pengelolaan klaim INA-CBG, serta pemahaman komprehensif terhadap sistem pembiayaan kesehatan[cite: 1].
+            <h3 class="section-title"><i class="fa-solid fa-bolt"></i> Key Impact & Summary</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; text-align: justify; margin-bottom: 1.5rem;">
+                Profesional di bidang pelayanan kesehatan dengan latar belakang Profesi Ners dan pengalaman dalam pengelolaan operasional klinik skala besar berbasis BPJS. Memiliki keahlian dalam manajemen alur pelayanan, pengembangan sistem operasional, implementasi SOP, serta transformasi Rekam Medis Elektronik (RME). Berpengalaman dalam pengelolaan layanan dengan volume tinggi, pengelolaan klaim INA-CBG, serta pemahaman komprehensif terhadap sistem pembiayaan kesehatan.
             </p>
+
+            <!-- HIGHLIGHT NUMBERS / METRICS -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="metric-number">28K+</div>
+                    <div class="metric-label">Peserta Kapitasi BPJS</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-notes-medical"></i>
+                    <div class="metric-number">7K+</div>
+                    <div class="metric-label">Kunjungan / Bulan</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-award"></i>
+                    <div class="metric-number">Paripurna</div>
+                    <div class="metric-label">Akreditasi Klinik</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="metric-number">3.81</div>
+                    <div class="metric-label">IPK Profesi Ners</div>
+                </div>
+            </div>
         </div>
 
         <!-- SKILLS -->
@@ -263,7 +319,7 @@
 
         <!-- EXPERIENCE -->
         <div class="card">
-            <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+            <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h3>
             <div class="timeline">
                 
                 <div class="timeline-item">
@@ -271,7 +327,7 @@
                     <div class="exp-company">KLINIK OPTIMA</div>
                     <div class="exp-date">Feb 2023 – Sekarang</div>
                     <ul class="exp-details">
-                        <li>Mengelola operasional Klinik Pratama Optima (±28.000 peserta BPJS, ±7.000 kunjungan/bulan)[cite: 1].</li>
+                        <li>Mengelola operasional Klinik Pratama Optima (±28.000 peserta BPJS, ±7.000 kunjungan/bulan).</li>
                         <li>Memimpin transformasi sistem layanan melalui implementasi Rekam Medis Elektronik (RME) di kedua Klinik Optima[cite: 1].</li>
                         <li>Melakukan input, verifikasi, dan review klaim INA-CBG untuk optimalisasi pembiayaan[cite: 1].</li>
                         <li>Berperan dalam meraih Akreditasi Paripurna di Klinik Utama Optima sesuai standar Bab III[cite: 1].</li>
