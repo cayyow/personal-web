@@ -30,84 +30,130 @@
             line-height: 1.6;
         }
 
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
         }
 
-        .profile-card {
+        .card {
             background: var(--white);
             border-radius: 12px;
             border: 1px solid var(--border);
             padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
             margin-bottom: 1.5rem;
         }
 
+        /* Header Style */
+        .hero {
+            text-align: center;
+        }
+
         h1 {
-            font-size: 2rem;
+            font-size: 2.25rem;
             color: var(--text-main);
-            margin-bottom: 0.5px;
+            margin-bottom: 0.25rem;
         }
 
         .tagline {
             color: var(--primary);
             font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 1.25rem;
         }
 
-        p {
+        .bio {
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 0.95rem;
         }
 
+        /* Section Styling */
         .section-title {
             font-size: 1.25rem;
             color: var(--text-main);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
+        /* Grid Skills */
         .grid-skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
         }
 
         .skill-item {
             background: var(--bg-light);
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 8px;
             border: 1px solid var(--border);
         }
 
         .skill-item h3 {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-main);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
         }
 
         .skill-item p {
             font-size: 0.85rem;
+            color: var(--text-muted);
             margin: 0;
         }
 
-        .cta-buttons {
-            margin-top: 2rem;
+        /* Experience Timeline */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.25rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Buttons */
+        .cta-container {
             display: flex;
             gap: 1rem;
             justify-content: center;
+            margin-top: 1.5rem;
         }
 
         .btn {
@@ -118,11 +164,23 @@
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: background 0.2s;
         }
 
         .btn:hover {
             background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-light);
+            color: var(--primary-dark);
         }
 
         footer {
@@ -136,47 +194,72 @@
 <body>
 
     <div class="container">
-        <!-- Profile Header -->
-        <div class="profile-card" style="text-align: center;">
+        <!-- Hero Section -->
+        <div class="card hero">
             <h1>Mochammad Nur Cahyono</h1>
-            <div class="tagline">Healthcare Management & Operations | Web & Tech Integration</div>
-            <p>Berpengalaman dalam administrasi dan manajemen fasilitas kesehatan, digitalisasi operasional klinik, serta pengembangan solusi berbasis web dan otomasi.</p>
-            
-            <div class="cta-buttons">
+            <div class="tagline">Healthcare Management & Operations | Tech & Web Integration Enthusiast</div>
+            <p class="bio">
+                Profesional di bidang manajemen fasilitas kesehatan yang berfokus pada efisiensi operasional, digitalisasi sistem medis (EMR), serta memadukan teknologi web dan otomasi untuk produktivitas kerja yang lebih optimal.
+            </p>
+            <div class="cta-container">
                 <a href="mailto:emailkamu@example.com" class="btn">Hubungi Saya</a>
+                <a href="#projects" class="btn btn-outline">Lihat Keahlian</a>
             </div>
         </div>
 
         <!-- Expertise Section -->
-        <div class="profile-card">
-            <h2 class="section-title">Fokus Keahlian</h2>
+        <div class="card" id="projects">
+            <h2 class="section-title">Bidang Keahlian</h2>
             <div class="grid-skills">
                 <div class="skill-item">
-                    <h3>Manajemen Kesehatan</h3>
-                    <p>Pengelolaan operasional klinik, EMR (Assist.id), dan ekosistem pelayanan medis.</p>
+                    <h3>🏥 Manajemen & Operasional Klinik</h3>
+                    <p>Pengelolaan fasilitas kesehatan primer dan rujukan, manajemen SDM medis, serta kolaborasi strategis institusi.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>Web & CMS Development</h3>
-                    <p>Kustomisasi website menggunakan WordPress, Elementor, dan Blocksy.</p>
+                    <h3>💻 Web Development & CMS</h3>
+                    <p>Kustomisasi dan pengelolaan website profesional menggunakan WordPress, Elementor, dan Blocksy.</p>
                 </div>
                 <div class="skill-item">
-                    <h3>Otomasi & Sistem</h3>
-                    <p>Penerapan skrip otomatisasi (UI.Vision) dan integrasi database (Supabase/Sheets).</p>
+                    <h3>⚡ Otomasi & Integrasi Sistem</h3>
+                    <p>Penerapan skrip otomatisasi alur kerja (UI.Vision), manajemen data CSV, serta pemanfaatan cloud database.</p>
                 </div>
             </div>
         </div>
 
+        <!-- Experience / Milestones Section -->
+        <div class="card">
+            <h2 class="section-title">Rekam Jejak & Pencapaian</h2>
+            
+            <div class="timeline-item">
+                <span class="timeline-date">Transformasi Digital</span>
+                <h3>Implementasi EMR (Assist.id)</h3>
+                <p>Memimpin transisi pencatatan medis manual ke Electronic Medical Record (EMR) yang sukses diadopsi penuh oleh tenaga medis.</p>
+            </div>
+            <br>
+            <div class="timeline-item">
+                <span class="timeline-date">Pengembangan Layanan</span>
+                <h3>Ekspansi Unit Layanan Klinik</h3>
+                <p>Terlibat langsung dalam manajemen operasional dan pembukaan unit layanan penunjang seperti fisioterapi untuk masyarakat.</p>
+            </div>
+            <br>
+            <div class="timeline-item">
+                <span class="timeline-date">Infrastruktur Digital</span>
+                <h3>Pengembangan Web & Otomasi Administrasi</h3>
+                <p>Membangun dan mengoptimalkan website operasional fasilitas kesehatan serta mengintegrasikan alat bantu otomasi untuk efisiensi data.</p>
+            </div>
+        </div>
+
         <!-- Philosophy Section -->
-        <div class="profile-card">
-            <h2 class="section-title">Filosofi Kerja</h2>
-            <p style="font-style: italic; color: var(--text-main); text-align: center;">
+        <div class="card">
+            <h2 class="section-title" style="justify-content: center; border: none; margin-bottom: 0.5rem;">Filosofi Kerja</h2>
+            <p class="philosophy">
                 "Terus Bertumbuh, Melayani dengan Hati, dan Melangkah Lebih Jauh."
             </p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Mochammad Nur Cahyono. Hosted via GitHub & Vercel.</p>
+        <p>&copy; 2026 Mochammad Nur Cahyono. Built with Passion, Hosted via GitHub & Vercel.</p>
     </footer>
 
 </body>
