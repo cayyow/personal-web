@@ -3,75 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochammad Nur Cahyono | Healthcare Management & Digital Integration Expert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Mochammad Nur Cahyono | Healthcare Management Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --accent: #0f172a; --primary: #0284c7; --text: #334155; --bg: #f8fafc; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; }
-        .container { max-width: 850px; margin: 4rem auto; padding: 0 2rem; }
-        section { margin-bottom: 3rem; }
-        h1 { font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem; }
-        h2 { color: var(--accent); border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 1.5rem; }
-        .profile-desc { font-size: 1.1rem; color: #64748b; margin-bottom: 2rem; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .card { background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #e2e8f0; }
-        .date { font-weight: 600; color: var(--primary); display: block; font-size: 0.85rem; }
-        ul { padding-left: 1.5rem; }
-        li { margin-bottom: 0.5rem; }
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #e0f2fe;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --bg-page: #f4f7f9;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 960px; margin: 3rem auto; padding: 0 1.5rem; }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Header Section */
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .header-section h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover { color: var(--primary); }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i { color: var(--primary); }
+
+        /* Summary */
+        .summary { font-size: 1.05rem; color: var(--text-muted); text-align: justify; }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #bae6fd;
+        }
+
+        /* Experience Timeline */
+        .experience-item { margin-bottom: 2rem; }
+        .experience-item:last-child { margin-bottom: 0; }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-title { font-size: 1.15rem; font-weight: 600; color: var(--text-main); }
+        .exp-company { font-size: 1rem; color: var(--primary); font-weight: 500; }
+        .exp-date { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; background: var(--bg-page); padding: 0.25rem 0.75rem; border-radius: 4px; }
+        
+        .exp-details {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .exp-details li { margin-bottom: 0.5rem; }
+
+        /* Achievements */
+        .achievement-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .achievement-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .achievement-list li::before {
+            content: "\f00c";
+            font-family: "FontAwesome";
+            position: absolute;
+            left: 0;
+            color: #10b981; /* Green check */
+        }
+
+        /* Education & Certs grid */
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .edu-grid { grid-template-columns: 1fr; } }
+        
+        .edu-item h4 { color: var(--text-main); font-size: 1rem; margin-bottom: 0.25rem; }
+        .edu-item p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+
+        footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <header>
-            <h1>Mochammad Nur Cahyono, S.Kep., Ns.</h1>
-            <p class="profile-desc">Profesional Manajemen Layanan Kesehatan & Integrator Teknologi. Memadukan keahlian operasional klinis dengan otomasi digital untuk efisiensi fasilitas kesehatan.</p>
-        </header>
+        <!-- HEADER -->
+        <div class="card header-section">
+            <h1>MOCHAMMAD NUR CAHYONO</h1>
+            <h2>Healthcare Professional – Manajemen & Operasional Layanan Kesehatan</h2>
+            <div class="contact-info">
+                <a href="tel:085183187884"><i class="fa-solid fa-phone"></i> 0851-8318-7884</a>
+                <a href="mailto:cay.yow9999@gmail.com"><i class="fa-solid fa-envelope"></i> cay.yow9999@gmail.com</a>
+                <a href="https://www.linkedin.com/in/mochammad-nur-cahyono-819458240/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+        </div>
 
-        <section>
-            <h2>Profil Profesional</h2>
-            <p>Berpengalaman luas dalam manajemen operasional Klinik Utama Optima, Surabaya. Saya mengkhususkan diri pada transformasi digital fasilitas kesehatan, mulai dari implementasi EMR hingga otomatisasi alur kerja administratif. Latar belakang pendidikan medis saya (Ners) menjadi landasan dalam memastikan setiap solusi teknologi yang dibangun tetap berfokus pada kualitas pelayanan pasien.</p>
-        </section>
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="card">
+            <h3 class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Summary</h3>
+            <p class="summary">
+                Profesional di bidang pelayanan kesehatan dengan latar belakang Profesi Ners dan pengalaman dalam pengelolaan operasional klinik skala besar berbasis BPJS. Memiliki keahlian dalam manajemen alur pelayanan, pengembangan sistem operasional, implementasi SOP, serta transformasi Rekam Medis Elektronik (RME). Berpengalaman dalam pengelolaan layanan dengan volume tinggi, pengelolaan klaim INA-CBG, serta pemahaman komprehensif terhadap sistem pembiayaan kesehatan (BPJS dan asuransi). Berorientasi pada efisiensi, mutu layanan, dan keberlanjutan operasional.
+            </p>
+        </div>
 
-        <section>
-            <h2>Keahlian Utama</h2>
-            <div class="grid">
-                <div class="card">
-                    <strong>Manajemen Layanan Kesehatan</strong>
-                    <ul>
-                        <li>Operasional Klinik & SDM Medis</li>
-                        <li>Strategi Kemitraan & BPJS</li>
-                        <li>Implementasi EMR (Assist.id)</li>
+        <!-- CORE SKILLS -->
+        <div class="card">
+            <h3 class="section-title"><i class="fa-solid fa-chart-pie"></i> Core Skills</h3>
+            <div class="skills-container">
+                <span class="skill-badge">Manajemen Operasional Layanan</span>
+                <span class="skill-badge">Pengelolaan Alur Pasien</span>
+                <span class="skill-badge">Sistem BPJS (FKTP & FKRTL)</span>
+                <span class="skill-badge">Klaim INA-CBG</span>
+                <span class="skill-badge">Sistem Asuransi</span>
+                <span class="skill-badge">Penyusunan & Implementasi SOP</span>
+                <span class="skill-badge">Transformasi RME</span>
+                <span class="skill-badge">Manajemen SDM & KPI</span>
+                <span class="skill-badge">Koordinasi Lintas Divisi</span>
+                <span class="skill-badge">Continuous Improvement</span>
+            </div>
+        </div>
+
+        <!-- WORK EXPERIENCE -->
+        <div class="card">
+            <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Pengalaman Kerja</h3>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">PIC Operasional & Pengembangan Layanan</div>
+                        <div class="exp-company">KLINIK OPTIMA</div>
+                    </div>
+                    <div class="exp-date">Februari 2023 – Sekarang</div>
+                </div>
+                <ul class="exp-details">
+                    <li>Bertanggung jawab sebagai PIC Operasional Klinik Pratama Optima dengan cakupan ±28.000 peserta kapitasi BPJS dan ±7.000 kunjungan pasien per bulan.</li>
+                    <li>Mengelola seluruh lini pelayanan (medis, keperawatan, kebidanan, farmasi, administrasi) serta menyusun jadwal tenaga kesehatan.</li>
+                    <li>Menyelesaikan permasalahan operasional lintas unit secara sistematis dan mengembangkan alur pelayanan.</li>
+                    <li>Mengelola kerja sama BPJS Kesehatan (FKTP & FKRTL) dan berperan sebagai Petugas Informasi dan Penanganan Pengaduan (PIPP) di Klinik Utama Optima.</li>
+                    <li>Melakukan input, verifikasi, dan review klaim INA-CBG untuk memastikan akurasi pembiayaan kesehatan.</li>
+                    <li>Menginisiasi dan mengimplementasikan transformasi Rekam Medis Elektronik (RME) secara menyeluruh.</li>
+                    <li>Mengelola proses rekrutmen, penyusunan KPI, evaluasi pegawai, serta menjalin kemitraan dengan faskes lain, vendor, dan distributor farmasi.</li>
+                </ul>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Partnership & Operational Executive</div>
+                        <div class="exp-company">PERIKSAIN.ID</div>
+                    </div>
+                    <div class="exp-date">2021 – 2022</div>
+                </div>
+                <ul class="exp-details">
+                    <li>Mengembangkan dan mengelola kemitraan dengan laboratorium, klinik, dan tenaga kesehatan.</li>
+                    <li>Menyusun dan mengoptimalkan alur layanan end-to-end (pasien – tenaga kesehatan – laboratorium).</li>
+                    <li>Mengidentifikasi permasalahan operasional dan memberikan solusi berbasis sistem.</li>
+                    <li>Berkontribusi dalam pengembangan layanan dan produk berbasis kebutuhan pasar.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- STRATEGIC ACHIEVEMENTS -->
+        <div class="card">
+            <h3 class="section-title"><i class="fa-solid fa-trophy"></i> Pencapaian Strategis</h3>
+            <ul class="achievement-list">
+                <li>Berperan dalam implementasi alur pelayanan sesuai standar Bab III Akreditasi Klinik hingga meraih Akreditasi Paripurna di Klinik Utama Optima.</li>
+                <li>Melakukan transformasi sistem layanan melalui implementasi Rekam Medis Elektronik (RME) di kedua Klinik Optima.</li>
+                <li>Berkontribusi dalam pencapaian Fasilitas Kesehatan Berkomitmen (2x) pada Klinik Pratama Optima.</li>
+                <li>Berkontribusi dalam pencapaian Fasilitas Kesehatan Berkomitmen pada Klinik Utama Optima.</li>
+                <li>Mendukung pencapaian Fasilitas Kesehatan dengan Telekonsultasi Teraktif (BPJS Kesehatan Cabang Kota Surabaya) di Klinik Pratama Optima.</li>
+            </ul>
+        </div>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <div class="card">
+            <div class="edu-grid">
+                <div>
+                    <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</h3>
+                    <div class="edu-item">
+                        <h4>Profesi Ners (Ns.)</h4>
+                        <p>Universitas Airlangga (2020 – 2021) | IPK 3.81</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>S1 Keperawatan</h4>
+                        <p>Universitas Airlangga (2016 – 2020) | IPK 3.17</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Sertifikasi</h3>
+                    <ul class="achievement-list">
+                        <li>STR Perawat (Aktif hingga 2027)</li>
+                        <li>Sertifikat Profesi PPNI</li>
+                        <li>Komunikasi Efektif Pelayanan Keperawatan</li>
                     </ul>
                 </div>
-                <div class="card">
-                    <strong>Digital & Otomasi</strong>
-                    <ul>
-                        <li>Web Development (WP/Elementor)</li>
-                        <li>Otomasi Workflow (UI.Vision)</li>
-                        <li>Integrasi Cloud Database</li>
-                    </ul>
-                </div>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>Rekam Jejak & Pencapaian</h2>
-            <div class="card">
-                <span class="date">2025 - Present</span>
-                <strong>Digitalisasi & Transformasi Operasional</strong>
-                <p>Memimpin migrasi sistem rekam medis ke EMR, peluncuran unit layanan fisioterapi, dan penguatan kemitraan strategis korporasi.</p>
-            </div>
-            <br>
-            <div class="card">
-                <span class="date">2023 - 2024</span>
-                <strong>Manajemen Kemitraan & Pemasaran</strong>
-                <p>Mengelola kemitraan Medical Check-Up (MCU) untuk berbagai perusahaan dan mengoordinasikan infrastruktur digital klinik serta kepatuhan administratif.</p>
-            </div>
-        </section>
-
-        <section>
-            <p style="text-align: center; font-style: italic;">"Terus Bertumbuh, Melayani dengan hati, dan melangkah lebih jauh."</p>
-        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Mochammad Nur Cahyono. Hosted via GitHub & Vercel.</p>
+    </footer>
+
 </body>
 </html>
